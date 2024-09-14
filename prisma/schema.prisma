@@ -10,8 +10,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = env("NEXT_DATABASE_URL") // uses connection pooling
-  directUrl = env("NEXT_DIRECT_URL") // uses a direct connection
+  url = env("NEXTDATABASE_URL") // uses connection pooling
+  directUrl = env("NEXTDIRECT_URL") // uses a direct connection
 }
 
 model Contact {
