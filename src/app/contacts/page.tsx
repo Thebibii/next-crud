@@ -5,14 +5,14 @@ import Search from "@/components/search";
 import { getContactPages } from "@/lib/data";
 import React from "react";
 
-const Contacts = async ({
+export default async function Contacts({
   searchParams,
 }: {
   searchParams: {
     query?: string;
     page?: string;
   };
-}) => {
+}) {
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page || 1);
 
@@ -30,6 +30,4 @@ const Contacts = async ({
       </div>
     </div>
   );
-};
-
-export default Contacts;
+}
