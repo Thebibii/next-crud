@@ -1,3 +1,4 @@
+"use server";
 import { getContacts } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 import React from "react";
