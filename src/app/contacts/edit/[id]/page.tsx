@@ -3,7 +3,7 @@ import { getContactById } from "@/lib/data";
 import { notFound } from "next/navigation";
 
 const UpdateContactPage = async ({ params }: { params: { id: string } }) => {
-  const id = params.id;
+  const id = await params.id;
   const contact = await getContactById(id);
 
   if (!contact) {
