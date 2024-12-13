@@ -1,11 +1,10 @@
 "use client";
 import { saveContact } from "@/lib/actions";
-import React from "react";
-import { useFormState } from "react-dom";
+import React, { useActionState } from "react";
 import { SubmitButton } from "./button";
 
 const CreateForm = () => {
-  const [state, formAction] = useFormState(saveContact, null);
+  const [state, formAction] = useActionState(saveContact, null);
 
   return (
     <div>
