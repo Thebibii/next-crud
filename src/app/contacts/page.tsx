@@ -8,13 +8,14 @@ import React from "react";
 export default async function Contacts({
   searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     query?: string;
     page?: string;
-  };
+  }>;
 }) {
-  const query = searchParams?.query || "";
-  const currentPage = Number(searchParams?.page || 1);
+  const resolvedParams = await searchParams; // Tunggu nilai searchParams
+  const query = resolvedParams?.query || "";
+  const currentPage = Number(resolvedParams?.page || 1);
 
   const totalPages = await getContactPages(query);
 
